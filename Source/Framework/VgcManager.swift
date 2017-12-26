@@ -209,7 +209,7 @@ let messageValueSeperator = ":"
     /// Used as a component of the bonjour names for the various app types.
     /// This should be set to something that uniquely identifies your app.
     ///
-    @objc open static var appIdentifier = "vgc"
+    @objc open static var appIdentifier = "pelau"
 
     @objc static var serviceDomain = "local"
     
@@ -237,7 +237,7 @@ let messageValueSeperator = ":"
                     return Host.current().localizedName!
                 #endif
             }
-            return ""
+//            return ""
         }
     }
 
@@ -450,7 +450,7 @@ let messageValueSeperator = ":"
                 VgcManager.peripheral.deviceInfo = DeviceInfo(deviceUID: "", vendorName: "", attachedToDevice: false, profileType: .ExtendedGamepad, controllerType: .Software, supportsMotion: true)
             
                 #if os(iOS)
-                    VgcManager.peripheral.watch = VgcWatch(delegate: VgcManager.peripheral)
+//                    VgcManager.peripheral.watch = VgcWatch(delegate: VgcManager.peripheral)
                 #endif
             
             case .Central:

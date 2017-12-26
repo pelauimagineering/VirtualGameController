@@ -24,7 +24,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(foundService:) name:@"VgcPeripheralFoundService" object:nil];
 
     
-    BOOL centralMode = false;
+    BOOL centralMode = true;
     
     if (centralMode) {
         

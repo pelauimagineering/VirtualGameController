@@ -31,7 +31,7 @@ public let VgcSystemMessageNotification:             String = "VgcSystemMessageN
 public let VgcPeripheralSetupNotification:           String = "VgcPeripheralSetupNotification"
 public let VgcNewPlayerIndexNotification:            String = "VgcNewPlayerIndexNotification"
 
-open class Peripheral: NSObject, VgcWatchDelegate {
+open class Peripheral: NSObject {
     
     fileprivate var vgcDeviceInfo: DeviceInfo!
     var browser: VgcBrowser!

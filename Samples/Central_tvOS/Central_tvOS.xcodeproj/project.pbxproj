@@ -207,7 +207,7 @@
 				TargetAttributes = {
 					2027BCCD1BA613FD0097452D = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = CN7G7TCUME;
+						DevelopmentTeam = 3NQBX2AGK5;
 						LastSwiftMigration = 0830;
 					};
 					2027BCDE1BA613FE0097452D = {
@@ -431,6 +431,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3NQBX2AGK5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CentralVirtualGameControllerTVSample",
@@ -453,6 +454,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3NQBX2AGK5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CentralVirtualGameControllerTVSample",

@@ -474,12 +474,13 @@ open class Elements: NSObject {
         // Iterate the set to set the identifier and load up the hash
         // used by devs to access the elements
         
-        for customElement in Elements.customElements.customProfileElements {
-            let elementCopy = customElement.clone()
-            elementCopy.identifier = customElement.identifier
-            custom[elementCopy.identifier] = elementCopy
-            customProfileElements.append(elementCopy)
-            
+        if (Elements.customElements != nil) {
+            for customElement in Elements.customElements.customProfileElements {
+                let elementCopy = customElement.clone()
+                elementCopy.identifier = customElement.identifier
+                custom[elementCopy.identifier] = elementCopy
+                customProfileElements.append(elementCopy)
+            }
         }
         
         super.init()
@@ -525,7 +526,7 @@ open class Elements: NSObject {
         // Get the controller-specific set of custom elements so they contain the
         // current values for the elements
         let customElements = controller.elements.custom.values
-        //let customElements: [Element] = controller.custom.values
+//        let customElements: [Element] = controller.custom.values
         supplemental = supplemental + customElements
         
         supplemental.insert(systemMessage, at: 0)

@@ -112,11 +112,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Handle element messages from watch.  No need to forward to Central, which is handled
         // automatically - only here for other processing.
-        VgcManager.peripheral.watch.valueChangedHandler = { (element: Element) in
-            
-            vgcLogDebug("[SAMPLE] Value changed handler received element state from watch: \(element.name) with value \(element.value)")
-            
-        }
+//        VgcManager.peripheral.watch.valueChangedHandler = { (element: Element) in
+//            
+//            vgcLogDebug("[SAMPLE] Value changed handler received element state from watch: \(element.name) with value \(element.value)")
+//            
+//        }
 
         // REQUIRED: Kick off the search for Centrals and Bridges that we can connect to.  When
         // services are found, the VgcPeripheralFoundService will fire.
