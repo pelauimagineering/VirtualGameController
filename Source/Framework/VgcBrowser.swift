@@ -383,9 +383,9 @@ class VgcBrowser: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Strea
     }
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
-//        if (service.name == localService.name) {
+        if (service.name == localService.name) {
             vgcLogDebug("Ignoring service because it is our own: \(service.name)")
-//        } else {
+        } else {
             vgcLogDebug("Found service of type \(service.type) at \(service.name)")
             var vgcService: VgcService
             if service.type == VgcManager.bonjourTypeBridge {
@@ -398,9 +398,11 @@ class VgcBrowser: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Strea
             
             NotificationCenter.default.post(name: Notification.Name(rawValue: VgcPeripheralFoundService), object: vgcService)
             
-            if deviceIsTypeOfBridge() && vgcService.type == .Central && connectedVgcService != vgcService { connectToService(vgcService) }
-//        }
-        
+            if vgcService.type == .Central && connectedVgcService != vgcService {
+                vgcLogDebug("Attempt to connect to service: \(service.name)")
+                connectToService(vgcService) }
+        }
+
     }
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
