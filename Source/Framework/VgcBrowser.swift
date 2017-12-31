@@ -383,7 +383,8 @@ class VgcBrowser: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Strea
     }
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
-        if (service.name == localService.name) {
+        
+        if (service.name == localService.name && TARGET_OS_SIMULATOR == 0) {
             vgcLogDebug("Ignoring service because it is our own: \(service.name)")
         } else {
             vgcLogDebug("Found service of type \(service.type) at \(service.name)")
@@ -402,7 +403,6 @@ class VgcBrowser: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Strea
                 vgcLogDebug("Attempt to connect to service: \(service.name)")
                 connectToService(vgcService) }
         }
-
     }
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
