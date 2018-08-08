@@ -1032,7 +1032,7 @@ open class VgcController: NSObject, StreamDelegate, VgcStreamerDelegate, NetServ
                 
                 if centralPublisher != nil && centralPublisher.haveConnectionToPeripheral && toPeripheralOutputStream[.smallData] != nil {
                     
-                    vgcLogDebug("Sending player index \(newValue.rawValue + 1) to controller \(deviceInfo.vendorName)")
+                    vgcLogDebug("Sending player index \(newValue.rawValue) to controller \(deviceInfo.vendorName)")
                     
                     let playerIndexElement = elements.playerIndex
                     playerIndexElement.value = playerIndex.rawValue as AnyObject
