@@ -110,8 +110,11 @@ class VgcBrowser: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Strea
             
             let systemMessageType = SystemMessages(rawValue: Int(truncating: element.value as! NSNumber))
             
-            vgcLogDebug("Central sent system message: \(systemMessageType!.description) to \(connectedVgcService.fullName)")
-            
+            vgcLogDebug("Central sent system message: \(systemMessageType!.description)")
+            if connectedVgcService != nil {
+                vgcLogDebug("Central sent system message to \(connectedVgcService.fullName)")
+            }
+
             if systemMessageType == .connectionAcknowledgement {
                 
                 DispatchQueue.main.async {
