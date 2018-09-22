@@ -162,17 +162,17 @@ internal class VgcCentralPublisher: NSObject, NetServiceDelegate, StreamDelegate
             
             if self.pendingStreams.count > 0 { vgcLogDebug("Testing for matching streams among \(self.pendingStreams.count) pending streams") }
             
-            for comparisonStream in self.pendingStreams {
-                if pendingStream1 == nil {
-                    for testStream in self.pendingStreams {
-                        if pendingStream1 == nil && (testStream.deviceInfo != nil && comparisonStream.deviceInfo != nil) && (testStream.deviceInfo.deviceUID == comparisonStream.deviceInfo.deviceUID) && testStream != comparisonStream {
-                            vgcLogDebug("Found matching stream for deviceUID: \(comparisonStream.deviceInfo.deviceUID)")
-                            pendingStream1 = testStream
-                            pendingStream2 = comparisonStream
-                            continue
+                for comparisonStream in self.pendingStreams {
+                    if pendingStream1 == nil {
+                        for testStream in self.pendingStreams {
+                            if (testStream.deviceInfo != nil && comparisonStream.deviceInfo != nil) && (testStream.deviceInfo.deviceUID == comparisonStream.deviceInfo.deviceUID) && testStream != comparisonStream {
+                                vgcLogDebug("Found matching stream for deviceUID: \(comparisonStream.deviceInfo.deviceUID)")
+                                pendingStream1 = testStream
+                                pendingStream2 = comparisonStream
+                                continue
+                            }
                         }
                     }
-                }
                 
                 // Test primarily for the situation where we only get one of the two required
                 // stream sets, and therefore there are potential orphans
