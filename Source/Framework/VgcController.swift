@@ -1819,8 +1819,8 @@ enum EncodingStructError: Error {
 }
 
 func encodeSnapshot<T>(_ value: T) -> Data {
-        var value = value
-    return withUnsafePointer(to: &value) { p in
+        var localValue = value
+    return withUnsafePointer(to: &localValue) { p in
         Data(bytes: p, count: MemoryLayout.size(ofValue: value))
     }
 }
